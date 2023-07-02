@@ -1,0 +1,105 @@
+1. Print the present working directory.
+1. $pwd
+ 
+2. From working direcory show the contents of root directory.
+2. $ls /
+
+
+3. Change directory to root.
+3. $cd /
+
+4. Change back to your home directory.
+4. $cd -
+
+5. Create four directories cprograms,javaprograms,C and Java. 
+   Create 4 files file1,file2,file3,file4. 
+   Create 3 files with extension .c in C dirctory. 
+   Create 2 files with .java extension in directory Java. 
+5. $mkdir cprograms 
+   $mkdir javaprograms
+   $mkdir c
+   $mkdir java
+   $touch file1,file2,file3,file4
+   $touch c/1.c c/2.c c/3.c
+   $touch java/prog1.java
+   $touch java/prog2.java
+
+6. Move all .c files to cprograms directory and .java files to Javaprograms directory.
+6. $mv *.c cprograms/.
+   $mv *.java javaprograms/.
+
+
+7. Create another directory temp.
+7. $mkdir temp
+
+8. Move all .c files in directory temp.
+8. check your home directory before running the command
+   $mv cprograms/*.c temp/.
+
+
+9. Create directory copy_file in your home directory.
+   Copy all files starting with name file in the directory copy_file.
+9. $mkdir file_copy
+   $cp file* file_copy/.
+
+10. Remove all .c files from your current directory
+10. $cd temp
+    $rm *.c
+    or
+    $rm tmp/*.c
+
+
+11. Delete directory copy_file.
+11. $rmdir -R copy_file
+
+12. Create hard link for any file and check the effect using ls command.
+12. $ln f1 hdlnk
+ 
+13. Create soft link for any file and check the effect using ls command.
+13. $ln -s f1 swlnk
+
+14. Create files by name hello1,hello2,hellofile under home directory.
+    Find all the files whose name starts with hello in home directory.
+    e.g hello1,hello2, hellofile etc.
+14. $find . -type f -name "hello*"
+
+15. Count number of entries in your current directory.
+15. $ls -l | wc -l
+
+16. Find the empty files
+16. $find . -type f -empty
+
+17. Count total number of C files in current directory.
+17. $ls *.c | wc -l
+    $find . -type f -name "*.c"| wc -l
+
+
+18. Count all the directories present in current directory.
+18. $find . -type d | wc -l
+
+
+19. Consider following table
+    5 amit 59
+    1 babita 90
+    3 chandan 89
+    4 daya 69
+    2 edwina 74
+    sort the data on column 1 , 2 and 3.
+    Store the data in different files and see the result.
+19. 1. For column 1
+       $sort -n student > f1
+    2. For column 2
+       $sort -k2 student > f2
+    3. For column 3
+       $sort -K3 -n student > f3
+    To see the sorted data
+       $cat f1
+       $cat f2
+       $cat f3
+
+
+20. Create file with names of 10 countries.
+    1. try head command
+    2. try tail command
+    3. display 6th and 7th country from your file.
+20. $head -n 7 country | tail -n 2

@@ -1,0 +1,109 @@
+1. Display all the processes.
+1. $ps
+
+2. Print pid,ppid and command for each process.
+2. $ps -e -o ppid,pid,cmd
+
+3. Create a file named file1 in the current directory, change the permission for file to following
+      a. rwx for user rw for group r for others
+      b. rw for user r for group and other
+      c. rwx for all
+      d. rwx for user r for group and other
+      e. rw for user rw for group and r for other
+   Use symbols and numeric values both to allocate permissions.
+
+3.  a. chmod 764 myfile1 
+    b. chmod 644 myfile1
+    c. chmod 777 myfile1
+    d. chmod 745 myfile1
+    e. chmod 664 myfile1
+
+    a. chmod ugo+r,ug+w,u+x
+    b. chmod ugo+r,u+w
+    c. chmod ugo+rwx
+    d. chmod ugo+r,u+w,uo+x
+    e. chmod ugo+r,ug+w
+
+
+4. Consider following table
+    5 amit 59
+    1 babita 90
+    3 chandan 89
+    4 dinesh 69
+    2 edwina 74
+    sort the data on column 1 , 2 and 3.
+    Store the data in different files and see the result.
+4. $sort -n datafile > f1
+   $sort -k2 datafile > f2
+   $sort -n -k3 datafile > f3
+   $cat f1 f2 f3
+
+
+5. Create file with names of 10 countries.
+    1. try head command
+    2. try tail command
+    3. display 6th and 7th country from your file.
+
+5. $head -n 7 country | tail -n 2
+ 6. Write a shell script to display the contents of file MoreCountries1.
+
+
+6. shell1.sh
+   ----------
+   cat MoreCountries1
+
+
+7. Accept name of a file from user and display the contents of file.
+
+7. shell2.sh
+   ---------
+   echo "Enter the file name"
+   read fname
+   cat $fname
+
+
+8. Write a shell script to copy contents of one file into another. Accept file name
+   from user.
+
+8. shell3.sh
+   ---------
+   echo "Enter file name"
+   read fname
+   cp $fname tempdata
+   cat tempdata
+
+
+9. Write a shell utility to copy top n lines from a file into fileCopy.txt file. Accept number of lines and
+   filename  from user.
+
+
+9. shell6.sh
+   ---------
+   echo "Enter File Name :: "
+   read fname
+   echo "No. of lines :: "
+   read no
+   cat $fname | head -n $no > newfile
+
+
+10. Write a shell utility to  Count number of files and directories in your current directory.
+
+10. shell7.sh
+    ---------
+   echo "Number of files"
+   find . -type f | wc -l
+   echo "Number of directories"
+   find . -type d | wc -l
+
+11. Write a shell utility to print count of files of given extension. Accept extension from user.
+11. shell8.sh
+    ---------
+    echo "Enter the extenction of file"
+    read ext
+    find . -name "*.$ext" | wc -l 
+
+12. Try sort -r , nl and uniq commands.
+
+
+
+ 

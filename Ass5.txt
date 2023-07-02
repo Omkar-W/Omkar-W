@@ -1,0 +1,55 @@
+1. Using positional parameter display contents of file. File is given as command line argument.
+
+
+1. shell1.sh
+-------------
+cat $1
+    Note : to run the script ----             
+           bash shell1.sh filename
+
+2. Write a script to copy the contents of file1 to file2 using positional parameters.
+
+2. shell2.sh
+----------
+cp $1 $2
+   Note : to run the script ----
+          bash shell2.sh filename1 filename2
+          contents of filename1 will be copied to filename2
+
+3. Write a script to copy contents of 2 files in one file and see the result using cat. Use    positional parameters.
+
+3. shell3.sh
+----------
+cat $1 $2 >> $3
+   Note : to run the script ----
+          bash shell3.sh filename1 filename2 filename3
+          contents of filename1 and filename2 will be copied in filename3.
+
+4. Write a shell utility to copy top n lines from a file into fileCopy.txt file. Pass number of       lines and file name ascommand line arguments. 
+
+4. shell4.sh
+-----------------
+echo "Enter File Name :: "
+read fname
+echo "No. of lines :: "
+read no
+cat $fname | head -n $no > newfile
+
+Note : to run the script ----
+          bash shell4.sh filename no_of_lines
+
+5. Search if word Russia exsists in file country.
+
+5. $gerp "Russia" country 
+
+
+6. Try out tar command
+
+6. $tar -cvf file.tar *.c                           -- This command creates a tar file called file.tar which is the Archive
+                                                       of all .c files in current directory.
+   $tar -xvf file.tar                               -- This command extracts files from Archives.
+
+
+7. Try out zip command.
+7. $zip myfile.zip filename.txt
+   $unzip myfile.zip
